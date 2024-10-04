@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division Calculator</title>
+    <script>
+        function calculateQuotient() {
+            // Récupérer les valeurs des champs de saisie
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            // Convertir les valeurs en nombres
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            // Vérifier si les entrées sont des nombres
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Veuillez entrer des nombres valides.");
+                return;
+            }
+
+            // Vérifier si le deuxième nombre est zéro
+            if (num2 === 0) {
+                alert("La division par zéro n'est pas permise.");
+                return;
+            }
+
+            // Calculer le quotient
+            let quotient = num1 / num2;
+
+            // Afficher le résultat
+            document.getElementById("result").innerText = "Le quotient est : " + quotient;
+        }
+    </script>
+</head>
+<body>
+    <!-- script pour le debut du chargement -->
+<script type="text/javascript">
+    <!--
+    alert('Debut du chargement de la page');
+    //-->
+    </script>
+    <!-- ici se trouve le contenu de la page web -->
+    <p>
+    Vous testez un script...<br />
+    Enjoy ;)
+    </p>
+    <!-- script pour la fin du chargement -->
+    <script type="text/javascript">
+    <!--
+    alert('Fin du chargement de la page');
+    //-->
+    </script>
+</body>
+</html>
