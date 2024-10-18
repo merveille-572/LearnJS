@@ -36,7 +36,7 @@
 </head>
 <body>
 
-    <style>
+      <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -61,11 +61,32 @@
         <button onclick="addImage()">ajouter l'image a la page</button>
     </div> -->
 
-    <div class="container"></div>
+    <!-- <div class="container"></div>
         <h1>ajouter une image avec l'adresse entré par l'utilisateur en tant que background image</h1>
         <input type="text" id="imageUrl" placeholder="Entrez le lien de l'image">
         <button onclick="BackgroundImage()">ajouter un background image a la page</button>
+    </div> -->
+
+
+    <!-- <div class="container">
+        <h1>Calculez le nombre de jours vécus</h1>
+        <input type="number" id="age" placeholder="Entrez votre âge">
+        <button onclick="calculateDays()">Calculer</button>
+        <p id="result"></p>
+    </div> -->
+
+
+    <div class="container">
+        <h1>Calcul des jours vécus et de l'écart avec l'âge visé</h1>
+        <input type="number" id="age1" placeholder="Entrez votre âge actuel">
+        <br> <br>
+        <input type="number" id="age2" placeholder="Entrez un age visé">
+        <button onclick="calculateDays()">Calculer</button>
+        <p id="result"></p>
+        <p id="error" style="color: red;"></p>
+        <h2 id="nombre"></h2>
     </div>
+
     <script>
         //EXERCICE  1 changer la couleur de fond avec javascript
 
@@ -93,15 +114,69 @@
         // document.body.appendChild(imgElement);
         //     }    
 
-        function BackgroundImage(){
-            const userImageUrl = document.getElementById('imageUrl').value 
-            if (userImageUrl){//si l'utilisateur entre une url alors applique le 
-            document.body.style.backgroundImage = `url('${userImageUrl}')`;
-            }
-            else{
-                alert("veuillez entrez une adresse url valide")
-            }
-        }
+        // function BackgroundImage(){
+        //     const userImageUrl = document.getElementById('imageUrl').value 
+        //     if (userImageUrl){//si l'utilisateur entre une url alors applique le 
+        //     document.body.style.backgroundImage = `url('${userImageUrl}')`;
+        //     }
+        //     else{
+        //         alert("veuillez entrez une adresse url valide")
+        //     }
+        // }
+// EXERCICE3
+
+    //     function calculateDays() {
+    //     // Récupérer l'âge de l'utilisateur
+    //     const age = document.getElementById('age').value;
+
+    //     // Vérifier si l'utilisateur a bien entré un âge valide
+    //     if (age && age > 0) {
+    //         // Si l'utilisateur a entré quelque chose (userAge n'est pas vide)
+    // // ET que l'âge est supérieur à 0, alors on exécute ce code
+    //         // Calculer le nombre de jours vécus (approximation)
+    //         const daysLived = age * 365;
+    //         // Afficher le résultat
+    //         document.getElementById('result').innerText = `Vous avez vécu environ ${daysLived} jours.`;
+    //     } else {
+    //         // Afficher un message d'erreur si l'âge est incorrect
+    //         alert("Veuillez entrer un âge valide.");
+    //     }
+    // }
+
+// EXERCICE4
+
+
+function calculateDays() {
+    // Récupérer et convertir les âges de l'utilisateur en nombres
+    const age1 = parseInt(document.getElementById('age1').value);
+    const age2 = parseInt(document.getElementById('age2').value);
+
+    // Réinitialiser les messages d'erreur et de résultat
+    document.getElementById('result').innerText = '';
+    document.getElementById('nombre').innerText = '';
+    document.getElementById('error').innerText = '';
+
+    // Vérifier si les âges sont valides
+    if (isNaN(age1) || age1 <= 0) {
+        document.getElementById('error').innerText = "Veuillez entrer un âge valide.";
+        return;
+    }
+    
+    if (isNaN(age2) || age2 <= age1) {
+        document.getElementById('error').innerText = "l'age visé ne peut pas etre  inferieur ou egal  a ton age actuel";
+                return;
+    }
+
+    // Calcul du nombre de jours vécus et des jours restants
+    const daysLived1 = age1 * 365; // Approximation du nombre de jours vécus
+    const daysLived2 = age2 * 365;
+    const atteindre = daysLived2 - daysLived1; // Différence entre les jours visés et les jours actuels
+
+    // Afficher le résultat
+    document.getElementById('result').innerText = `Vous avez vécu environ ${daysLived1} jours.`;
+    document.getElementById('nombre').innerText = `Il vous reste environ ${atteindre} jours pour atteindre ${age2} ans.`;
+}
+
 
     </script>
 
