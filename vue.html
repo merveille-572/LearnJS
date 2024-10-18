@@ -35,18 +35,37 @@
     </script> -->
 </head>
 <body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh; /* S'assurer que le body prend tout l'écran */
+            background-size: cover; /* L'image couvrira tout l'écran */
+            background-position: center; /* L'image sera centrée */
+            background-repeat: no-repeat; /* Éviter que l'image ne se répète */
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
     <!-- <div class="container">
         <h1 >Changer la couleur de fond</h1>
         <input type="text" id="colorInput" placeholder="Entrez une couleur">
         <button onclick="changeBackgroundColor()">Changer la couleur</button>
     </div> -->
 
-    <div class="container">
+    <!-- <div class="container">
         <h1>ajouter une image avec l'adresse entré par l'utilisateur</h1>
         <input type="text" id="image" placeholder="Entrez le lien de l'image">
         <button onclick="addImage()">ajouter l'image a la page</button>
-    </div>
+    </div> -->
 
+    <div class="container"></div>
+        <h1>ajouter une image avec l'adresse entré par l'utilisateur en tant que background image</h1>
+        <input type="text" id="imageUrl" placeholder="Entrez le lien de l'image">
+        <button onclick="BackgroundImage()">ajouter un background image a la page</button>
+    </div>
     <script>
         //EXERCICE  1 changer la couleur de fond avec javascript
 
@@ -61,18 +80,28 @@
 
         // EXERCICE 2 damander l'adresse d'une image et l'ajouter a une page 
 
-            function addImage(){
-                const userImage = document.getElementById("image").value;
+        //     function addImage(){
+        //         const userImage = document.getElementById("image").value;
         
-        // Créer un nouvel élément d'image
-        const imgElement = document.createElement("img");
+        // // Créer un nouvel élément d'image
+        // const imgElement = document.createElement("img");
         
-        // Définir l'attribut src de l'image avec l'URL fournie par l'utilisateur
-        imgElement.src = userImage;
+        // // Définir l'attribut src de l'image avec l'URL fournie par l'utilisateur
+        // imgElement.src = userImage;
         
-        // Ajouter l'image au body
-        document.body.appendChild(imgElement);
-            }    
+        // // Ajouter l'image au body
+        // document.body.appendChild(imgElement);
+        //     }    
+
+        function BackgroundImage(){
+            const userImageUrl = document.getElementById('imageUrl').value 
+            if (userImageUrl){//si l'utilisateur entre une url alors applique le 
+            document.body.style.backgroundImage = `url('${userImageUrl}')`;
+            }
+            else{
+                alert("veuillez entrez une adresse url valide")
+            }
+        }
 
     </script>
 
