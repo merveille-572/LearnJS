@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Division Calculator</title>
-    <script>
+    <!-- <script>
         function calculateQuotient() {
             // Récupérer les valeurs des champs de saisie
             let num1 = document.getElementById("num1").value;
@@ -32,25 +32,49 @@
             // Afficher le résultat
             document.getElementById("result").innerText = "Le quotient est : " + quotient;
         }
-    </script>
+    </script> -->
 </head>
 <body>
-    <!-- script pour le debut du chargement -->
-<script type="text/javascript">
-    <!--
-    alert('Debut du chargement de la page');
-    //-->
+    <!-- <div class="container">
+        <h1 >Changer la couleur de fond</h1>
+        <input type="text" id="colorInput" placeholder="Entrez une couleur">
+        <button onclick="changeBackgroundColor()">Changer la couleur</button>
+    </div> -->
+
+    <div class="container">
+        <h1>ajouter une image avec l'adresse entré par l'utilisateur</h1>
+        <input type="text" id="image" placeholder="Entrez le lien de l'image">
+        <button onclick="addImage()">ajouter l'image a la page</button>
+    </div>
+
+    <script>
+        //EXERCICE  1 changer la couleur de fond avec javascript
+
+        // function changeBackgroundColor(){
+        //     const userColor = document.getElementById('colorInput').value
+        // document.body. style.backgroundColor = userColor;
+
+        // }
+        // if you want to change the color of paragraph you cant add the id or title for example (h1 id = "mainTItle")after you come
+        // in the function receveive the id in document.getElementById("maintitle").
+
+
+        // EXERCICE 2 damander l'adresse d'une image et l'ajouter a une page 
+
+            function addImage(){
+                const userImage = document.getElementById("image").value;
+        
+        // Créer un nouvel élément d'image
+        const imgElement = document.createElement("img");
+        
+        // Définir l'attribut src de l'image avec l'URL fournie par l'utilisateur
+        imgElement.src = userImage;
+        
+        // Ajouter l'image au body
+        document.body.appendChild(imgElement);
+            }    
+
     </script>
-    <!-- ici se trouve le contenu de la page web -->
-    <p>
-    Vous testez un script...<br />
-    Enjoy ;)
-    </p>
-    <!-- script pour la fin du chargement -->
-    <script type="text/javascript">
-    <!--
-    alert('Fin du chargement de la page');
-    //-->
-    </script>
+
 </body>
 </html>
