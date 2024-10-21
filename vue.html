@@ -76,7 +76,7 @@
     </div> -->
 
 
-    <div class="container">
+    <!-- <div class="container">
         <h1>Calcul des jours vécus et de l'écart avec l'âge visé</h1>
         <input type="number" id="age1" placeholder="Entrez votre âge actuel">
         <br> <br>
@@ -85,6 +85,16 @@
         <p id="result"></p>
         <p id="error" style="color: red;"></p>
         <h2 id="nombre"></h2>
+    </div> -->
+
+
+    <div class="container">
+        <h1>Liste de Courses</h1>
+        <input type="text" id="itemInput" placeholder="Ajouter un article">
+        <button onclick="addItem()">Ajouter</button>
+    
+        <h2>Mes Articles</h2>
+        <ul id="itemList"></ul>
     </div>
 
     <script>
@@ -178,6 +188,26 @@ function calculateDays() {
 }
 
 
+// EXERCICE 6 SUR LES LISTES
+
+// script.js
+function addItem(){
+    // Récupérer la valeur de l'input
+    const itemInput = document.getElementById('itemInput');
+    const itemValue = itemInput.value.trim(); // Trim pour enlever les espaces
+    // Vérifier si le champ n'est pas vide
+    if (itemValue !== '') {
+                // Créer un nouvel élément de liste
+                const li = document.createElement('li');
+                li.innerText = itemValue;
+
+                // Ajouter l'élément à la liste
+                document.getElementById('itemList').appendChild(li);
+
+                // Vider le champ de texte
+                itemInput.value = '';
+}
+}
     </script>
 
 </body>
