@@ -8,6 +8,7 @@ body{
     margin: 0;
     color: white;
     min-height: 200vh;
+    overflow-x: hidden;
 }
 .box{
     border: 6px solid white;
@@ -20,4 +21,24 @@ p{
     visibility: hidden;
     width: 240px;
     margin: 10px auto 0;
+    opacity: 0;
+    transition:0.6s ;
+    transform: translateX(-200px);
+}
+
+.show-response{
+visibility: visible;
+opacity: 1;
+transform: translateX(0);
+}
+
+.mousemove{
+    height: 50px;
+    width: 50px;
+    border: 2px solid pink;
+    position: absolute;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease;
+    z-index: -1;
 }
