@@ -28,3 +28,5 @@ function estPalindrome(mot) {
   console.log(estPalindrome('Radar'));    // true
   console.log(estPalindrome('Bonjour'));  // false
   
+  //formulaire js
+  
