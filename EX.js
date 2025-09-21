@@ -30,3 +30,18 @@ function estPalindrome(mot) {
   
   //formulaire js
   
+  let fruits = ["pomme", "banane","orange"]
+  fruits.push("cerise")//ajoute cerise a la fin 
+  fruits.unshift("fraise")
+  console.log(fruits)
+
+  let etudiants = [
+    { nom: "Alice", age: 25 },
+    { nom: "Bob", age: 22 },
+    { nom: "Charlie", age: 28 }
+  ];
+  etudiants.forEach((etudiant)=>{
+    console.log(etudiant.nom)
+  });
+  let etudiantsFiltres = etudiants.filter((etudiant) => etudiant.age > 23);
+console.log(etudiantsFiltres);
