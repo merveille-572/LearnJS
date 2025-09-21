@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do simple</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+    <h1 class="text-2xl font-bold mb-4 text-center">To-Do</h1>
+
+    <form id="taskForm" class="flex flex-col">
+      <div class="flex gap-2">
+        <input id="taskInput" type="text" placeholder="Écris ta tâche"
+          class="flex-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Ajouter</button>
+      </div>
+      <p id="errorMessage" class="text-red-500 text-sm mt-2 hidden">Veuillez entrer une tâche avant de soumettre !</p>
+    </form>
+
+    <ul id="taskList" class="mt-4 space-y-2"></ul>
+  </div>
+</body>
+</html>
